@@ -5,7 +5,7 @@
 このリポジトリは、fuwafuwakokoro design のポートフォリオサイトです。
 
 ## URL
-（GitHub Pages 公開後にここへURLを記載）
+https://fuwafuwakokorodesign.github.io/
 
 ## 使用技術
 - HTML
