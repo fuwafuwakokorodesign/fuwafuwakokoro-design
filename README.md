@@ -1,6 +1,6 @@
 # fuwafuwakokoro-design
 
-こころにあるものをそっと灯すデザイン。
+こころにあるもの、そっと灯すデザイン
 
 このリポジトリは、fuwafuwakokoro design のポートフォリオサイトです。
 
