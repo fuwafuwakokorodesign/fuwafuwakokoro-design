@@ -13,11 +13,11 @@ body {
     background-image: linear-gradient(
         180deg,
         rgba(77, 106, 165, 1),
-        rgba(99, 128, 185, 1) 23%,
-        rgba(59, 155, 176, 0.7) 32%,
+        rgba(99, 128, 185, 1) 20%,
+        rgba(59, 155, 176, 0.7) 30%,
         rgba(99, 128, 185, 0.5) 40%,
-        rgba(251, 252, 237, 1) 55% 78%,
-        rgba(104, 134, 195, 0.7) 87%,
+        rgba(251, 252, 237, 1) 55% 70%,
+        rgba(104, 134, 195, 0.7) 85%,
         rgba(77, 106, 165, 1) 110%
     );
 }
@@ -87,48 +87,110 @@ h2 {
     display: none;
 }
 
-/* --- コンタクトボタン ＆ Topへ戻る --- */
-.contact-btn {
+/* --- コンタクトボタン ＆ 共通ボタンデザイン --- */
+.contact-btn,
+.contact-btn2 {
     display: flex;
-    margin: 100px auto 230px;
-    gap: 50px;
+    margin: 100px auto 150px;
     justify-content: center;
+    width: 100%;
 }
-/* 共通ボタンデザイン */
-.contact-btn a {
+
+/* 共通ボタン基本スタイル（aタグ / buttonタグ統一） */
+.contact-btn a,
+.contact-btn2 a,
+.c-form__submit button {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     width: 272px;
+    max-width: 100%;
     height: 60px;
     padding: 0 20px;
     border-radius: 100px;
     font-size: 15px;
+    font-family: "Noto Serif JP", serif;
     color: #ffffff;
     border: 1px solid #4d6aa5;
     background-color: #4d6aa5;
     text-decoration: none;
+    cursor: pointer;
+    line-height: 1;
     transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
 }
-/* LINEボタン */
-.btn-line {
-    border-color: #4d6aa5;
-    background-color: #4d6aa5;
-}
-.btn-line:hover {
+
+.contact-btn a:hover,
+.contact-btn2 a:hover,
+.c-form__submit button:hover {
     background-color: rgba(251, 252, 237, 1);
     color: #4d6aa5;
 }
 
-/* メールボタン */
-.btn-mail {
-    border-color: #4d6aa5;
-    background-color: #4d6aa5;
+/* LINEボタン内の画像調整 */
+.contact-btn a img,
+.contact-btn2 a img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
 }
-.btn-mail:hover {
-    background-color: rgba(251, 252, 237, 1);
+
+/* --- お問い合わせフォーム --- */
+.c-form {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.c-form__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+.c-form__label,
+.c-form__input {
+    padding: 10px;
+}
+.c-form__label {
+    width: 90%;
+}
+.c-form__input {
+    width: 90%;
+    font-size: 15px;
+    border: solid 1px #4d6aa5;
+    background-color: rgba(251, 252, 237, 0.8);
+    border-radius: 10px;
     color: #4d6aa5;
+    box-sizing: border-box;
+}
+
+.c-form__input:focus-visible {
+    outline: #4d6aa5 auto 1px;
+}
+.c-form__required {
+    color: #fff;
+    border-radius: 4px;
+    padding: 5px 5px;
+    margin: 0 0 0 5px;
+}
+.c-form__input::placeholder {
+    color: rgba(77, 106, 165, 0.55);
+}
+
+textarea.c-form__input {
+    height: 160px;
+    background-color: rgba(251, 252, 237, 0.8);
+}
+
+.c-form__submit {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.c-form__submit button {
+    margin-top: 0; /* 親要素側でmargin制御 */
 }
 
 .to-top {
@@ -213,12 +275,51 @@ h2 {
     line-height: 1;
     white-space: nowrap;
 }
+.thanks {
+    background-image: linear-gradient(
+        180deg,
+        rgba(85, 113, 169, 0.8) 40%,
+        rgba(77, 106, 165, 0.8) 68%,
+        rgba(237, 238, 174, 1) 80%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    text-align: center;
+    padding-top: 30px;
+
+    color: #fff;
+}
+.btn-back {
+    text-decoration: none; /* 本来の下線を消す */
+    border-bottom: 1px solid #ffffff; /* 下線を自作する */
+    padding-bottom: 4px;
+}
+body.thanks {
+    position: relative;
+}
+
+.thanks-moon {
+    position: absolute;
+    right: 5%; /* ← もっと右へ */
+    bottom: 20%; /* ← もっと下へ */
+    width: 30vw; /* ← サイズはそのまま */
+    pointer-events: none;
+}
+.thanks h1 {
+    font-size: 32px; /* ← 好きなサイズに変更 */
+    font-weight: 600;
+    margin: 50px 0 20px;
+}
+.thanks p {
+    margin-bottom: 50px;
+    line-height: 2;
+}
 
 /* ==========================================
    3. index.html 専用スタイル (PC表示時)
 ========================================== */
 
-/* --- Hero (FV) --- */
 #hero {
     width: 100%;
     height: 100vh;
@@ -232,7 +333,6 @@ h2 {
     overflow: hidden;
 }
 
-/* --- 月のアニメーション（PC基準位置） --- */
 .fv-moon {
     position: absolute;
     width: 30vw;
@@ -260,7 +360,6 @@ h2 {
     }
 }
 
-/* --- 全体配置（PC基準位置） --- */
 .catch-wrap {
     position: absolute;
     top: 42%;
@@ -271,7 +370,6 @@ h2 {
     gap: 12px;
 }
 
-/* --- 共通タイピング設定 --- */
 .catch {
     font-size: 32px;
     line-height: 1.4;
@@ -282,25 +380,15 @@ h2 {
     margin: 0;
 }
 
-/* ==========================================
-   タイピング時間・タイミングの制御
-========================================== */
-
-/* 1行目（例：8文字） */
 .line1 {
     animation: typingLine1 1.2s forwards;
     animation-delay: 0.3s;
 }
 
-/* 2行目（例：11文字） */
 .line2 {
     animation: typingLine2 1.65s forwards;
     animation-delay: 1s;
 }
-
-/* ==========================================
-   文字数（em）に応じたアニメーション定義
-========================================== */
 
 @keyframes typingLine1 {
     from {
@@ -320,7 +408,6 @@ h2 {
     }
 }
 
-/* 星空・流れ星アニメーション */
 .fv-stars {
     position: absolute;
     top: 0;
@@ -387,11 +474,9 @@ h2 {
     }
 }
 
-/* 背景雲・月 */
 .cloud-set {
     position: relative;
     width: 100%;
-
     pointer-events: none;
     transition: opacity 0.4s ease;
 }
@@ -403,7 +488,7 @@ h2 {
 }
 
 .cloud-space {
-    height: 500px; /* 雲の高さに合わせる */
+    height: 500px;
 }
 
 .cloud1 {
@@ -446,14 +531,7 @@ h2 {
     top: -30px;
     z-index: 5;
 }
-.cloud-fixed {
-    position: fixed;
-    left: 0;
-    width: 100%;
-    pointer-events: none;
-}
 
-/* --- 各セクション --- */
 #message,
 #about,
 #works {
@@ -464,7 +542,6 @@ h2 {
     box-sizing: border-box;
 }
 
-/* Message */
 .text-wrap {
     position: relative;
     display: flex;
@@ -474,8 +551,7 @@ h2 {
     align-items: flex-start;
     width: 100%;
     margin: 0 auto 150px;
-    /* ▼ ガタつき防止の安全策 */
-    min-height: 400px; /* 縦書きテキストが収まる十分な高さを確保 */
+    min-height: 400px;
     box-sizing: border-box;
 }
 
@@ -496,7 +572,6 @@ h2 {
     pointer-events: none;
 }
 
-/* タイトルスタイル */
 .title-wrap {
     display: flex;
     justify-content: center;
@@ -515,7 +590,7 @@ h2 {
 
 .sub-title {
     font-size: 20px;
-    margin: 15px auto 0;
+    margin: 15px auto 100px;
     text-align: center;
 }
 .title-wrap-work {
@@ -545,7 +620,6 @@ h2 {
     color: rgba(77, 106, 165, 0.8);
 }
 
-/* About (PC用) */
 .about-content {
     max-width: 1000px;
     margin: 90px auto 250px auto;
@@ -583,7 +657,6 @@ h2 {
     height: auto;
 }
 
-/* PC/SP 画像切り替え */
 .photo-pc {
     display: block !important;
 }
@@ -591,7 +664,6 @@ h2 {
     display: none !important;
 }
 
-/* Works (index.html) */
 .works-grid {
     max-width: 1000px;
     margin: 0 auto;
@@ -635,7 +707,6 @@ h2 {
     margin: 60px auto 0;
 }
 
-/* Flow */
 .flow-wrap {
     max-width: 1000px;
     margin: 0 auto;
@@ -703,12 +774,7 @@ h2 {
     align-items: center;
     gap: 5px;
     width: 100%;
-    margin: 250px auto 25px;
-}
-
-.title-wrap-works img {
-    width: 20px;
-    height: auto;
+    margin: 250px auto 5px;
 }
 
 .work-title-text {
@@ -818,28 +884,6 @@ h2 {
     background: rgba(77, 106, 165, 1);
     color: rgba(251, 252, 237, 1);
 }
-.contact-btn2 {
-    display: flex;
-    margin: 100px auto 230px;
-    gap: 50px;
-    justify-content: center;
-}
-.contact-btn2 a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    width: 272px;
-    height: 60px;
-    padding: 0 20px;
-    border-radius: 100px;
-    font-size: 15px;
-    color: #ffffff;
-    border: 1px solid #4d6aa5;
-    background-color: #4d6aa5;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
 
 .hidden-card {
     display: none;
@@ -906,7 +950,7 @@ h2 {
             rgba(99, 128, 185, 1) 10%,
             rgba(59, 155, 176, 0.7) 30%,
             rgba(99, 128, 185, 0.5) 40%,
-            rgba(251, 252, 237, 1) 53% 80%,
+            rgba(251, 252, 237, 1) 53% 70%,
             rgba(104, 134, 195, 0.7) 90%,
             rgba(77, 106, 165, 1) 110%
         );
@@ -937,7 +981,7 @@ h2 {
         height: 2px;
         background: #fff;
         position: absolute;
-        left: 7px;
+        left: 0px;
         transition: 0.3s;
     }
 
@@ -1010,7 +1054,6 @@ h2 {
         padding: 50px;
     }
 
-    /* FV調整: PCと同じ配置比率を維持 */
     .fv-moon {
         width: 38vw;
         top: 60%;
@@ -1025,13 +1068,11 @@ h2 {
         font-size: 32px;
         line-height: 1.5;
         top: 50%;
-
         width: 0;
     }
     .cloud-space {
-        height: 350px; /* 雲の高さに合わせる */
+        height: 350px;
     }
-    /* About (スマホ縦並び) */
     #about .about-content {
         flex-direction: column;
         align-items: center;
@@ -1039,28 +1080,24 @@ h2 {
         gap: 40px;
     }
 
-    /* 写真の親要素を小さくする */
     .about-photo {
-        width: 65%; /* ← 70%でもOK。65%が一番バランス良い */
+        width: 65%;
         margin: 0;
         padding: 0;
     }
 
-    /* PC写真は非表示 */
     .photo-pc {
         display: none !important;
     }
 
-    /* スマホ写真を使う */
     .photo-sp {
         display: block !important;
-        width: 100%; /* 親の65%にフィット */
+        width: 100%;
         height: auto;
         margin: 0;
         padding: 0;
     }
 
-    /* スマホだけ改行を消す */
     .about-text br {
         display: none;
     }
@@ -1084,8 +1121,8 @@ h2 {
     }
 
     .profile-block {
-        margin-bottom: 1.8em; /* 段落の余白をつける */
-        font-size: 14px; /* スマホ向けに少し小さく */
+        margin-bottom: 1.8em;
+        font-size: 14px;
     }
 }
 
@@ -1101,11 +1138,11 @@ h2 {
         background-image: linear-gradient(
             180deg,
             rgba(77, 106, 165, 1),
-            rgba(99, 128, 185, 1) 10%,
-            rgba(59, 155, 176, 0.7) 25%,
-            rgba(99, 128, 185, 0.5) 37%,
-            rgba(251, 252, 237, 1) 47% 75%,
-            rgba(104, 134, 195, 0.7) 90%,
+            rgba(99, 128, 185, 1) 8%,
+            rgba(59, 155, 176, 0.7) 20%,
+            rgba(99, 128, 185, 0.5) 30%,
+            rgba(251, 252, 237, 1) 45% 75%,
+            rgba(104, 134, 195, 0.7) 85%,
             rgba(77, 106, 165, 1) 110%
         );
     }
@@ -1115,7 +1152,6 @@ h2 {
         scroll-margin-top: 0px;
     }
 
-    /* FV調整:  */
     .fv-moon {
         width: 50vw;
         min-width: 200px;
@@ -1132,17 +1168,15 @@ h2 {
         font-size: 18px;
         line-height: 1.5;
         top: auto;
-
         width: auto;
     }
 
     #message {
         min-height: auto;
         padding-bottom: 0;
-        overflow: hidden; /* 内部要素の飛び出しによる揺れを防止 */
+        overflow: hidden;
     }
 
-    /* Message (スマホ横書き) */
     .text-wrap {
         position: relative;
         display: flex;
@@ -1177,27 +1211,24 @@ h2 {
     .title-wrap-flow {
         margin-top: 150px;
     }
-    /* 雲の基本トランジションをゆっくりにする */
+
     .cloud-set {
-        /* 変化の速度を 0.4s から 1s〜1.2s に延ばして滑らかに */
         transition:
             transform 1.2s cubic-bezier(0.25, 1, 0.5, 1),
             opacity 0.8s ease;
     }
 
-    /* スマホ画面に合わせて雲の固定位置・高さを微調整 */
     .cloud-set2 {
-        top: 20px; /* PC版の40pxから微調整 */
-        height: 120px; /* 画像の縦幅が大きすぎて一気に上がって見えないよう抑える */
+        top: 20px;
+        height: 120px;
     }
 
     .cloud-set3 {
-        top: 60px; /* PC版の120pxから微調整 */
+        top: 60px;
     }
 
-    /* 雲の画像自体の縮小 */
     .cloud {
-        width: 120%; /* 少し大きめにして端の切れを防ぐ */
+        width: 120%;
         left: -10%;
     }
 
@@ -1258,25 +1289,56 @@ h2 {
         font-size: 14px;
     }
 
-    /* ボタン・フッター・Grid */
-    .contact-btn {
+    /* --- スマホ時のボタン調整（全ボタン同一サイズ・余白に調整） --- */
+    .contact-btn,
+    .contact-btn2 {
         flex-direction: column;
-        gap: 50px;
-        margin: 150px auto 220px;
+        gap: 30px;
+        margin: 80px auto 140px;
         align-items: center;
     }
 
-    .contact-btn a {
-        width: 70%;
-        max-width: 270px;
+    /* スマホ時の全ボタン幅・高さ共通化 */
+    .contact-btn a,
+    .contact-btn2 a,
+    .c-form__submit button {
+        width: 85%;
+        max-width: 280px;
+        height: 54px;
         font-size: 14px;
     }
 
-    .contact-btn a img {
+    .c-form {
+        margin-top: 100px;
+        display: block;
         width: 100%;
-        height: auto;
-        aspect-ratio: 270 / 60;
-        object-fit: contain;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .c-form__item {
+        display: block;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .c-form__label {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .c-form__input {
+        width: 100%;
+    }
+    .c-form__item input,
+    .c-form__item textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .c-form__submit {
+        display: block;
+        text-align: center;
+        margin-top: 50px;
     }
 
     .to-top img {
@@ -1349,21 +1411,38 @@ h2 {
     .more-btn-wrap {
         margin-top: 150px;
     }
-    .contact-btn2 {
-        flex-direction: column;
-        gap: 50px;
-        margin: 150px auto 220px;
-        align-items: center;
-    }
 
-    .contact-btn2 a {
-        width: 70%;
-        max-width: 270px;
-    }
     .graphic-num {
         font-size: 18px;
     }
     .graphic-title {
         font-size: 14px;
+    }
+    /* thanksページ */
+    .btn-back {
+        border-bottom: 1px solid #ffffff;
+        padding-bottom: 6px;
+        font-size: 14px;
+    }
+
+    .thanks h1 {
+        font-size: 26px;
+        margin: 40px 0 15px;
+        line-height: 1.4;
+    }
+
+    .thanks p {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 40px;
+        padding: 0 20px;
+        text-align: center;
+    }
+    .thanks-moon {
+        position: absolute;
+        width: 45vw;
+        right: 2%;
+        bottom: 5%;
+        pointer-events: none;
     }
 }
