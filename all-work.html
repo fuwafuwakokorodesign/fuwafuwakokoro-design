@@ -13,8 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Noto+Serif+JP:wght@200..900&display=swap"
         rel="stylesheet">
     <!-- cssの読み込み -->
-    <link rel="stylesheet" href="CSS/reset.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="./images/favicon.ico">
 
 
@@ -26,15 +26,16 @@
 
 
 
+
+
+
     <header id="header">
-
-
-        <h1 class="logo"><a href="index.html">
-                <p>fuwafuwakokoro <br>design</p>
+        <h1 class="logo">
+            <a href="index.html">
+                fuwafuwakokoro <br>design
             </a>
         </h1>
         <nav class="header-nav">
-
             <ul>
                 <li><a href="index.html#message">message</a></li>
                 <li><a href="index.html#about">about</a></li>
@@ -42,11 +43,10 @@
                 <li><a href="index.html#flow">flow</a></li>
                 <li><a href="index.html#contact">contact</a></li>
             </ul>
-
         </nav>
-        <div class="hamburger">
-            <span></span>
-        </div>
+
+        <div class="hamburger" aria-label="メニュー開閉" role="button" tabindex="0"></div>
+
         <nav class="sp-menu">
             <ul>
                 <li><a href="index.html#message">message</a></li>
@@ -55,9 +55,7 @@
                 <li><a href="index.html#flow">flow</a></li>
                 <li><a href="index.html#contact">contact</a></li>
             </ul>
-
         </nav>
-
 
     </header>
 
@@ -238,15 +236,11 @@
         <!-- もっと見るボタン -->
         <button id="moreBtn" class="more-btn">もっと見る</button>
 
-        <!-- LINE / メールボタン（コード版） -->
-        <div class="contact-btn2">
-            <a href="https://lin.ee/VAMANF5" target="_blank" rel="noopener noreferrer" class="btn-line">
-                公式LINEで問い合わせる
-            </a>
 
-            <a href="mailto:fuwafuwakokoro.design@gmail.com" class="btn-mail">
-                Mailで問い合わせる
-            </a>
+        <div class="contact-btn2">
+            <a href="index.html#contact">問い合わせる</a>
+
+
         </div>
 
     </div>
@@ -262,13 +256,12 @@
 
 
 
-    
     <div class="to-top">
         <a href="#" aria-label="ページトップへ戻る">
             <img src="images/Back-to-Top.png" alt="トップへ戻る">
         </a>
     </div>
-    </section>
+
 
     <footer class="footer">
         <div class="footer_inner">
