@@ -1436,7 +1436,7 @@ body.thanks {
         line-height: 1.8;
         margin-bottom: 40px;
         padding: 0 20px;
-        text-align: center;
+        text-align: start;
     }
     .thanks-moon {
         position: absolute;
