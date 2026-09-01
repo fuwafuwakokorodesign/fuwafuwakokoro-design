@@ -125,21 +125,19 @@ document.addEventListener("DOMContentLoaded", () => {
             content: 10,
         };
 
-        const cloudTop1 = "100px";
-        const cloudTop2 = "110px";
-        const cloudTop3 = "100px";
-
+        // スマホ版とPC版で固定するトップ位置を適切に調整
+        const cloudTop1 = isMobile ? "60px" : "100px";
+        const cloudTop2 = isMobile ? "70px" : "110px";
+        const cloudTop3 = isMobile ? "60px" : "100px";
         /* --- cloud1 --- */
-        const trigger1 = messageTop - 300;
+        const trigger1 = messageTop - (isMobile ? 100 : 300);
 
         if (!cloud1Fixed && scrollY > trigger1) {
             cloud1Fixed = true;
             cloud1.classList.add("cloud-fixed");
             cloud1.style.top = cloudTop1;
             cloud1.style.zIndex = Z.cloud;
-        }
-
-        if (cloud1Fixed && scrollY <= trigger1) {
+        } else if (cloud1Fixed && scrollY <= trigger1) {
             cloud1Fixed = false;
             cloud1.classList.remove("cloud-fixed");
             cloud1.style.top = "";
@@ -147,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         /* --- cloud2 + moon2 --- */
-        const trigger2 = aboutTop - 300;
+        const trigger2 = aboutTop - (isMobile ? 100 : 300);
 
         if (!cloud2Fixed && scrollY > trigger2) {
             cloud2Fixed = true;
@@ -158,13 +156,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (moon2 && !moon2Fixed) {
                 moon2Fixed = true;
                 moon2.style.position = "fixed";
-                moon2.style.top = isMobile ? "70px" : "30px";
+                moon2.style.top = isMobile ? "50px" : "30px";
                 moon2.style.right = "10%";
                 moon2.style.zIndex = Z.moon;
             }
-        }
-
-        if (cloud2Fixed && scrollY <= trigger2) {
+        } else if (cloud2Fixed && scrollY <= trigger2) {
             cloud2Fixed = false;
             cloud2.classList.remove("cloud-fixed");
             cloud2.style.top = "";
@@ -180,16 +176,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         /* --- cloud3 --- */
-        const trigger3 = worksTop - 300;
+        const trigger3 = worksTop - (isMobile ? 100 : 300);
 
         if (!cloud3Fixed && scrollY > trigger3) {
             cloud3Fixed = true;
             cloud3.classList.add("cloud-fixed");
             cloud3.style.top = cloudTop3;
             cloud3.style.zIndex = Z.cloud;
-        }
-
-        if (cloud3Fixed && scrollY <= trigger3) {
+        } else if (cloud3Fixed && scrollY <= trigger3) {
             cloud3Fixed = false;
             cloud3.classList.remove("cloud-fixed");
             cloud3.style.top = "";
