@@ -99,7 +99,7 @@ h2 {
 /* 共通ボタン基本スタイル（aタグ / buttonタグ統一） */
 .contact-btn a,
 .contact-btn2 a,
-.c-form__submit button {
+.c-form_submit button {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -124,7 +124,7 @@ h2 {
 
 .contact-btn a:hover,
 .contact-btn2 a:hover,
-.c-form__submit button:hover {
+.c-form_submit button:hover {
     background-color: rgba(251, 252, 237, 1);
     color: #4d6aa5;
 }
@@ -143,53 +143,53 @@ h2 {
     max-width: 600px;
 }
 
-.c-form__item {
+.c-form_item {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: 20px;
 }
-.c-form__label,
-.c-form__input {
+.c-form_label,
+.c-form_input {
     padding: 10px;
 }
-.c-form__label {
+.c-form_label {
     width: 90%;
 }
-.c-form__input {
+.c-form_input {
     width: 90%;
     font-size: 15px;
     border: solid 1px #4d6aa5;
     background-color: rgba(251, 252, 237, 0.8);
-    border-radius: 10px;
+    border-radius: 20px;
     color: #4d6aa5;
     box-sizing: border-box;
 }
 
-.c-form__input:focus-visible {
+.c-form_input:focus-visible {
     outline: #4d6aa5 auto 1px;
 }
-.c-form__required {
+.c-form_required {
     color: #fff;
     border-radius: 4px;
     padding: 5px 5px;
     margin: 0 0 0 5px;
 }
-.c-form__input::placeholder {
+.c-form_input::placeholder {
     color: rgba(77, 106, 165, 0.55);
 }
 
-textarea.c-form__input {
+textarea.c-form_input {
     height: 160px;
     background-color: rgba(251, 252, 237, 0.8);
 }
 
-.c-form__submit {
+.c-form_submit {
     text-align: center;
     margin-top: 80px;
 }
 
-.c-form__submit button {
+.c-form_submit button {
     margin-top: 0; /* 親要素側でmargin制御 */
 }
 
@@ -1301,7 +1301,7 @@ body.thanks {
     /* スマホ時の全ボタン幅・高さ共通化 */
     .contact-btn a,
     .contact-btn2 a,
-    .c-form__submit button {
+    .c-form_submit button {
         width: 85%;
         max-width: 280px;
         height: 54px;
@@ -1312,30 +1312,30 @@ body.thanks {
         margin-top: 100px;
         display: block;
         width: 100%;
-        padding: 10px;
+        padding: 30px;
         box-sizing: border-box;
     }
-    .c-form__item {
-        display: block;
+    .c-form_item {
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
     }
-    .c-form__label {
+    .c-form_label {
         width: 100%;
-        margin-bottom: 10px;
+
         font-size: 14px;
-        margin-bottom: 20px;
     }
-    .c-form__input {
+    .c-form_input {
         width: 100%;
     }
-    .c-form__item input,
-    .c-form__item textarea {
+    .c-form_item input,
+    .c-form_item textarea {
         width: 100%;
         box-sizing: border-box;
     }
 
-    .c-form__submit {
+    .c-form_submit {
         display: block;
         text-align: center;
         margin-top: 50px;
