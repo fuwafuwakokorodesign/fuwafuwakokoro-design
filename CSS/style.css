@@ -308,7 +308,7 @@ body.thanks {
 }
 .thanks h1 {
     font-size: 32px; /* ← 好きなサイズに変更 */
-    font-weight: 600;
+    
     margin: 50px 0 20px;
 }
 .thanks p {
