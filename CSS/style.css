@@ -136,6 +136,10 @@ h2 {
     width: auto;
     object-fit: contain;
 }
+.line-link {
+    text-decoration: underline;
+    color: #fff; /* 今の淡い世界観に合う白文字 */
+}
 
 /* --- お問い合わせフォーム --- */
 .c-form {
@@ -191,6 +195,12 @@ textarea.c-form_input {
 
 .c-form_submit button {
     margin-top: 0; /* 親要素側でmargin制御 */
+}
+.c-form_notice {
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .to-top {
@@ -308,7 +318,7 @@ body.thanks {
 }
 .thanks h1 {
     font-size: 32px; /* ← 好きなサイズに変更 */
-    
+
     margin: 50px 0 20px;
 }
 .thanks p {
@@ -1287,6 +1297,9 @@ body.thanks {
     }
     .step-text {
         font-size: 14px;
+    }
+    .sub-title {
+        margin: 15px 20px 100px;
     }
 
     /* --- スマホ時のボタン調整（全ボタン同一サイズ・余白に調整） --- */
