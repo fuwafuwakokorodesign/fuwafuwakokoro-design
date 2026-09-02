@@ -1455,7 +1455,7 @@ body.thanks {
         position: absolute;
         width: 45vw;
         right: 2%;
-        bottom: 5%;
+        bottom: 15%;
         pointer-events: none;
     }
 }
