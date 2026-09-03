@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cloudTop2 = isMobile ? "70px" : "110px";
         const cloudTop3 = isMobile ? "60px" : "100px";
         /* --- cloud1 --- */
-        const trigger1 = messageTop - (isMobile ? 100 : 300);
+        const trigger1 = messageTop - (isMobile ? 60 : 110);
 
         if (!cloud1Fixed && scrollY > trigger1) {
             cloud1Fixed = true;
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         /* --- cloud2 + moon2 --- */
-        const trigger2 = aboutTop - (isMobile ? 100 : 300);
+        const trigger2 = aboutTop - (isMobile ? 70 : 120);
 
         if (!cloud2Fixed && scrollY > trigger2) {
             cloud2Fixed = true;
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         /* --- cloud3 --- */
-        const trigger3 = worksTop - (isMobile ? 100 : 300);
+        const trigger3 = worksTop - (isMobile ? 70 : 110);
 
         if (!cloud3Fixed && scrollY > trigger3) {
             cloud3Fixed = true;
@@ -337,8 +337,6 @@ document.addEventListener("DOMContentLoaded", () => {
             img.addEventListener("click", () => {
                 const item = workData[index];
                 if (item) {
-                    
-
                     const isMobile = window.innerWidth <= 768;
                     if (isMobile && item.spImg) {
                         modalImg.src = item.spImg;
