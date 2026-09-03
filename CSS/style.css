@@ -778,6 +778,28 @@ body.thanks {
     );
     background-size: cover;
 }
+/* --- ヘッダー --- */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 4%;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-family: "Cormorant Garamond", serif;
+    z-index: 9999;
+    background: linear-gradient(
+        180deg,
+        rgba(39, 69, 85, 0.35) 0%,
+        rgba(39, 69, 85, 0.1) 60%,
+        rgba(0, 0, 0, 0) 100%
+    );
+
+    backdrop-filter: blur(8px); /* すりガラス効果で上品にコンテンツを潜らせる */
+}
 .title-wrap-works {
     display: flex;
     justify-content: center;
@@ -1219,7 +1241,7 @@ body.thanks {
     }
 
     .title-wrap-flow {
-        margin-top: 150px;
+        margin-top: 100px;
     }
 
     .cloud-set {
@@ -1239,7 +1261,6 @@ body.thanks {
 
     .cloud {
         width: 100%;
-       
     }
 
     .moon2 {
@@ -1290,7 +1311,9 @@ body.thanks {
         width: 95%;
         margin-left: 0;
     }
-
+    .works-grid {
+        gap: 100px;
+    }
     .work-text,
     .work-text2 {
         font-size: 14px;
@@ -1300,6 +1323,9 @@ body.thanks {
     }
     .sub-title {
         margin: 15px 20px 100px;
+    }
+    #flow {
+        margin-top: 150px;
     }
 
     /* --- スマホ時のボタン調整（全ボタン同一サイズ・余白に調整） --- */
