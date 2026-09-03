@@ -798,7 +798,7 @@ body.thanks {
         rgba(0, 0, 0, 0) 100%
     );
 
-    backdrop-filter: blur(8px); /* すりガラス効果で上品にコンテンツを潜らせる */
+    backdrop-filter: blur(8px); /* すりガラス効果 */
 }
 .title-wrap-works {
     display: flex;
