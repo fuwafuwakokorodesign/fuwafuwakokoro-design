@@ -779,7 +779,7 @@ body.thanks {
     background-size: cover;
 }
 /* --- ヘッダー --- */
-#header {
+.all-work-page #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
