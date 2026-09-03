@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
             img.addEventListener("click", () => {
                 const item = workData[index];
                 if (item) {
-                    modal.style.display = "block";
+                    
 
                     const isMobile = window.innerWidth <= 768;
                     if (isMobile && item.spImg) {
@@ -349,6 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (modalText && item.text) {
                         modalText.textContent = item.text;
                     }
+                    modal.style.display = "block";
                 }
             });
         });
