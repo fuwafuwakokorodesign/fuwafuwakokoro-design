@@ -798,7 +798,7 @@ body.thanks {
         rgba(0, 0, 0, 0) 100%
     );
 
-    backdrop-filter: blur(8px); /* すりガラス効果 */
+    backdrop-filter: blur(8px); /* すりガラス効果で上品にコンテンツを潜らせる */
 }
 .title-wrap-works {
     display: flex;
@@ -1178,6 +1178,11 @@ body.thanks {
             rgba(77, 106, 165, 1) 110%
         );
     }
+    #hero,
+    .main-visual {
+        height: 90vh; /* 100vh から 75vh（画面の75%程度の高さ）に縮小 */
+        min-height: 480px; /* 最小高さを 600px から 480px に変更 */
+    }
     #message,
     #about,
     #works {
@@ -1324,6 +1329,7 @@ body.thanks {
     .sub-title {
         margin: 15px 20px 100px;
     }
+    #contact,
     #flow {
         margin-top: 150px;
     }
