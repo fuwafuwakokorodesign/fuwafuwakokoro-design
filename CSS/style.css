@@ -538,7 +538,7 @@ body.thanks {
     position: absolute;
     width: 14vw;
     right: 10%;
-    top: -30px;
+    top: -20px;
     z-index: 5;
 }
 
@@ -1271,8 +1271,8 @@ body.thanks {
     .moon2 {
         position: absolute;
         width: 22vw;
-        right: 8%;
-        top: px;
+        right: 10%;
+        top: -20px;
     }
     .cloud-space {
         height: 200px;
