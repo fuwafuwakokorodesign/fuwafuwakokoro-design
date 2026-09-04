@@ -126,11 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         // スマホ版とPC版で固定するトップ位置を適切に調整
-        const cloudTop1 = isMobile ? "60px" : "100px";
-        const cloudTop2 = isMobile ? "70px" : "110px";
-        const cloudTop3 = isMobile ? "60px" : "100px";
+        const cloudTop1 = isMobile ? "100px" : "100px";
+        const cloudTop2 = isMobile ? "110px" : "110px";
+        const cloudTop3 = isMobile ? "100px" : "100px";
+
         /* --- cloud1 --- */
-        const trigger1 = messageTop - (isMobile ? 60 : 110);
+        const trigger1 = messageTop - (isMobile ? 100 : 110);
 
         if (!cloud1Fixed && scrollY > trigger1) {
             cloud1Fixed = true;
@@ -145,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         /* --- cloud2 + moon2 --- */
-        const trigger2 = aboutTop - (isMobile ? 70 : 120);
+        const trigger2 = aboutTop - (isMobile ? 110 : 120);
 
         if (!cloud2Fixed && scrollY > trigger2) {
             cloud2Fixed = true;
@@ -156,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (moon2 && !moon2Fixed) {
                 moon2Fixed = true;
                 moon2.style.position = "fixed";
-                moon2.style.top = isMobile ? "50px" : "30px";
+                moon2.style.top = isMobile ? "70px" : "60px";
                 moon2.style.right = "10%";
                 moon2.style.zIndex = Z.moon;
             }
@@ -176,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         /* --- cloud3 --- */
-        const trigger3 = worksTop - (isMobile ? 70 : 110);
+        const trigger3 = worksTop - (isMobile ? 100 : 110);
 
         if (!cloud3Fixed && scrollY > trigger3) {
             cloud3Fixed = true;
